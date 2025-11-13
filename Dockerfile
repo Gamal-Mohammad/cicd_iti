@@ -1,4 +1,4 @@
-FROM httpd
+FROM myapp:v1
 # Add new index
 COPY index.html /usr/local/apache2/htdocs
 # Add Env Vars
