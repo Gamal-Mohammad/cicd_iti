@@ -25,12 +25,32 @@
       padding: 80px 0;
       text-align: center;
     }
+    .search-bar input {
+      border-radius: 50px;
+      padding-left: 40px;
+    }
+    .search-bar .fa-search {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      color: gray;
+    }
     .product-card {
       transition: 0.3s;
     }
     .product-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .category-badge {
+      background-color: #ff7f00;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin: 5px;
+      display: inline-block;
+      cursor: pointer;
     }
     footer {
       background-color: #222;
@@ -53,21 +73,42 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Deals</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item me-3"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item me-3"><a class="nav-link" href="#">Shop</a></li>
+          <li class="nav-item me-3"><a class="nav-link" href="#">Deals</a></li>
+          <li class="nav-item me-3"><a class="nav-link" href="#">Contact</a></li>
           <li class="nav-item">
             <a class="nav-link position-relative" href="#">
               <i class="fa-solid fa-cart-shopping"></i>
-              <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">2</span>
+              <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">3</span>
             </a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+
+  <!-- 🔍 Search Bar -->
+  <div class="container mt-4">
+    <div class="position-relative search-bar mb-4">
+      <i class="fa fa-search"></i>
+      <input type="text" class="form-control" placeholder="Search for products, brands and categories...">
+    </div>
+  </div>
+
+  <!-- 🏷️ Categories -->
+  <section class="container text-center mb-5">
+    <h4 class="mb-3">Shop by Category</h4>
+    <div>
+      <span class="category-badge">Electronics</span>
+      <span class="category-badge">Fashion</span>
+      <span class="category-badge">Home & Kitchen</span>
+      <span class="category-badge">Beauty</span>
+      <span class="category-badge">Toys</span>
+      <span class="category-badge">Sports</span>
+    </div>
+  </section>
 
   <!-- 🏠 Hero Section -->
   <section class="hero">
@@ -78,16 +119,18 @@
     </div>
   </section>
 
-  <!-- 🛒 Featured Products -->
+  <!-- 🛒 Product Section -->
   <section class="container py-5">
     <h2 class="text-center mb-4">Featured Products</h2>
     <div class="row g-4">
+
+      <!-- Product Template (10 items) -->
       <!-- Product 1 -->
       <div class="col-md-3">
         <div class="card product-card">
-          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Product 1">
+          <img src="https://via.placeholder.com/300x200?text=Headphones" class="card-img-top" alt="Product 1">
           <div class="card-body text-center">
-            <h5 class="card-title">Wireless Headphones</h5>
+            <h6 class="card-title">Wireless Headphones</h6>
             <p class="text-warning fw-bold">$49.99</p>
             <button class="btn btn-outline-warning btn-sm">Add to Cart</button>
           </div>
@@ -97,9 +140,9 @@
       <!-- Product 2 -->
       <div class="col-md-3">
         <div class="card product-card">
-          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Product 2">
+          <img src="https://via.placeholder.com/300x200?text=Smart+Watch" class="card-img-top" alt="Product 2">
           <div class="card-body text-center">
-            <h5 class="card-title">Smart Watch</h5>
+            <h6 class="card-title">Smart Watch</h6>
             <p class="text-warning fw-bold">$79.99</p>
             <button class="btn btn-outline-warning btn-sm">Add to Cart</button>
           </div>
@@ -109,9 +152,9 @@
       <!-- Product 3 -->
       <div class="col-md-3">
         <div class="card product-card">
-          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Product 3">
+          <img src="https://via.placeholder.com/300x200?text=Backpack" class="card-img-top" alt="Product 3">
           <div class="card-body text-center">
-            <h5 class="card-title">Laptop Backpack</h5>
+            <h6 class="card-title">Laptop Backpack</h6>
             <p class="text-warning fw-bold">$29.99</p>
             <button class="btn btn-outline-warning btn-sm">Add to Cart</button>
           </div>
@@ -121,10 +164,82 @@
       <!-- Product 4 -->
       <div class="col-md-3">
         <div class="card product-card">
-          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Product 4">
+          <img src="https://via.placeholder.com/300x200?text=Speaker" class="card-img-top" alt="Product 4">
           <div class="card-body text-center">
-            <h5 class="card-title">Bluetooth Speaker</h5>
+            <h6 class="card-title">Bluetooth Speaker</h6>
             <p class="text-warning fw-bold">$59.99</p>
+            <button class="btn btn-outline-warning btn-sm">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="col-md-3">
+        <div class="card product-card">
+          <img src="https://via.placeholder.com/300x200?text=Sneakers" class="card-img-top" alt="Product 5">
+          <div class="card-body text-center">
+            <h6 class="card-title">Running Sneakers</h6>
+            <p class="text-warning fw-bold">$89.99</p>
+            <button class="btn btn-outline-warning btn-sm">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="col-md-3">
+        <div class="card product-card">
+          <img src="https://via.placeholder.com/300x200?text=Perfume" class="card-img-top" alt="Product 6">
+          <div class="card-body text-center">
+            <h6 class="card-title">Luxury Perfume</h6>
+            <p class="text-warning fw-bold">$39.99</p>
+            <button class="btn btn-outline-warning btn-sm">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="col-md-3">
+        <div class="card product-card">
+          <img src="https://via.placeholder.com/300x200?text=Smartphone" class="card-img-top" alt="Product 7">
+          <div class="card-body text-center">
+            <h6 class="card-title">Smartphone X10</h6>
+            <p class="text-warning fw-bold">$499.99</p>
+            <button class="btn btn-outline-warning btn-sm">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="col-md-3">
+        <div class="card product-card">
+          <img src="https://via.placeholder.com/300x200?text=Blender" class="card-img-top" alt="Product 8">
+          <div class="card-body text-center">
+            <h6 class="card-title">Kitchen Blender</h6>
+            <p class="text-warning fw-bold">$24.99</p>
+            <button class="btn btn-outline-warning btn-sm">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 9 -->
+      <div class="col-md-3">
+        <div class="card product-card">
+          <img src="https://via.placeholder.com/300x200?text=Laptop" class="card-img-top" alt="Product 9">
+          <div class="card-body text-center">
+            <h6 class="card-title">15” Laptop Pro</h6>
+            <p class="text-warning fw-bold">$899.99</p>
+            <button class="btn btn-outline-warning btn-sm">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 10 -->
+      <div class="col-md-3">
+        <div class="card product-card">
+          <img src="https://via.placeholder.com/300x200?text=Camera" class="card-img-top" alt="Product 10">
+          <div class="card-body text-center">
+            <h6 class="card-title">Digital Camera</h6>
+            <p class="text-warning fw-bold">$299.99</p>
             <button class="btn btn-outline-warning btn-sm">Add to Cart</button>
           </div>
         </div>
