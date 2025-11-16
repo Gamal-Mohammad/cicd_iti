@@ -11,6 +11,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh '''
+                cd ${WORKSPACE}
                 docker build -t cicd_app:latest .
                 '''
             }
