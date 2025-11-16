@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Pull Code') {
             steps {
-                git 'https://github.com/<your-username>/cicd-project.git'
+                git 'https://github.com/Gamal-Mohammad/cicd_iti.git'
             }
         }
 
