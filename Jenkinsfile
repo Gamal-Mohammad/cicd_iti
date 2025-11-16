@@ -11,7 +11,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh '''
-                cd ${WORKSPACE}
+                cd /var/lib/jenkins/workspace/cicd
                 docker build -t cicd_app:latest .
                 '''
             }
