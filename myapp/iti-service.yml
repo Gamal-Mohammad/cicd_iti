@@ -1,0 +1,14 @@
+kind: Service
+metadata:
+  labels:
+    app: nginx
+    app.kubernetes.io/instance: myapp
+  name: nginx-deployment
+  namespace: myapp
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx
